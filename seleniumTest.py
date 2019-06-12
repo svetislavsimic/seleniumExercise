@@ -14,7 +14,7 @@ assert "Python" in driver.title
 # elem.send_keys(Keys.RETURN)
 # assert "No results found." not in driver.page_source
 # driver.close()
-
+sleep(2)
 driver.find_element_by_id("news").click()
-sleep(3)
+sleep(4)
 driver.close()
