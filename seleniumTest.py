@@ -1,5 +1,4 @@
 from selenium import webdriver
-from time import sleep
 from selenium.webdriver.common.keys import Keys
 
 
@@ -8,13 +7,10 @@ driver.get("http://www.python.org")
 driver.maximize_window()
 assert "Python" in driver.title
 
-# elem = driver.find_element_by_name("q")
-# elem.clear()
-# elem.send_keys("pycon")
-# elem.send_keys(Keys.RETURN)
-# assert "No results found." not in driver.page_source
-# driver.close()
-sleep(2)
-driver.find_element_by_id("news").click()
-sleep(4)
+elem = driver.find_element_by_name("q")
+elem.clear()
+elem.send_keys("pycon")
+elem.send_keys(Keys.RETURN)
+assert "No results found." not in driver.page_source
 driver.close()
+
