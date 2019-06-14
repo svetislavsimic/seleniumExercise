@@ -4,7 +4,7 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 import time
 
-class TestKlasa(unittest.TestCase):
+class TestPythonOrg(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
