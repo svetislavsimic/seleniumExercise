@@ -2,3 +2,4 @@ Za domaci 11.06. :
 * otvorite stranicu https://www.python.org/
 * kliknite na tab News
 ***************************************************************
+Vezbamo GIT!!!
