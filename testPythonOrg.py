@@ -29,6 +29,8 @@ class PythonOrg(unittest.TestCase):
         time.sleep(1)
 
 
-    def setUp(self):
-        self.driver = webdriver.Chrome()
-        self.driver.maximize_window()
+    def tearDown(self):
+        self.driver.close()
+
+if __name__ == "__main__":
+    unittest.main()
