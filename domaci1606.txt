@@ -1,0 +1,5 @@
+Kreirati klasu Guru99 koja je izvedena iz klase TestCase
+i otvoriti stranicu:
+http://demo.guru99.com/test/newtours/register.php
+U klasi Guru99 implementirati metod testCountry u kom cete
+selektovati Barbados kao zemlju iz liste ponudjenih zemalja.
