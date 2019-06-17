@@ -15,7 +15,7 @@ class TestClickNews(unittest.TestCase):
         self.driver.maximize_window()
 
 
-    def Click_on_News(self):
+    def clickonNews(self):
         driver = self.driver
         driver.get("http://www.python.org")
         s1 = Select(driver.find_element_by_name("News from around the Python world"))
@@ -33,4 +33,3 @@ class TestClickNews(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
