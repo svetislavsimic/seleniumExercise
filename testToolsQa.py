@@ -6,7 +6,7 @@ import time
 class ToolsQa(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
         self.driver.maximize_window()
 
     def simaNestoKuca(self):
@@ -22,7 +22,7 @@ class ToolsQa(unittest.TestCase):
         for opt in s1.options:
             print(opt.text)
             s1.select_by_visible_text(opt.text)
-            time.sleep(10)
+            time.sleep(1.5)
 
 
     def tearDown(self):
