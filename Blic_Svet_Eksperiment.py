@@ -60,10 +60,6 @@ class FacebookTesting(unittest.TestCase):
         treca_vest_u_svetu_title = driver.title
         print(driver.title)
 
-        driver.switch_to.window(svet)
-        time.sleep(3)
-        print(driver.title)
-
         driver.switch_to.window(blic_naslovna)
         time.sleep(3)
         print(driver.title)
