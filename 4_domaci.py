@@ -20,10 +20,21 @@ class BlicTest(unittest.TestCase):
         driver.maximize_window()
         blic_home = driver.window_handles[0]
 
+        ''' Opcija 1. '''
+
+        linksvet = driver.find_elements_by_xpath("//a[@href='/vesti/svet'][contains(.,'Svet')]")
+
+        for link in linksvet:
+            driver.execute_script("window.open('" + link.get_attribute("href") + "');")
+            print(link.get_attribute("href"))
+            sleep(3)
+
+        ''' # Opcija 2. ;
         for svet in driver.find_elements_by_xpath("//a[@href='/vesti/svet'][contains(.,'Svet')]"):
             svet.get_attribute('href')
 
-        driver.execute_script("window.open('svet')")
+        driver.execute_script("window.open('svet')")'''
+
         blic_svet = driver.window_handles[1]
         driver.switch_to.window(blic_svet)
         sleep(3)
