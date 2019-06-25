@@ -14,8 +14,9 @@ driver.get(location)
 
 # Press the "Alert" button to demonstrate the Simple Alert
 button = driver.find_element_by_name('alert')
+time.sleep(3)
 button.click()
-
+time.sleep(5)
 try:
     # Wait as long as required, or maximum of 10 sec for alert to appear
     WebDriverWait(driver, 10).until(cond.alert_is_present())
@@ -25,6 +26,7 @@ try:
 
     # Retrieve the message on the Alert window
     msg = obj.text
+    assert msg == "Hello!"
     print("Alert shows following message: " + msg)
 
     # Use the accept() method to accept the alert
