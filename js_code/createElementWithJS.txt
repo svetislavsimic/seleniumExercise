@@ -1,0 +1,19 @@
+var btn1 = document.createElement("BUTTON");
+btn1.innerHTML = 'test value';
+btn1.style.width = '200px'; 
+btn1.style.height = '200px'; 
+btn1.style.background = 'teal';
+btn1.style.color = 'red';
+btn1.style.fontSize = '20px';
+document.body.appendChild(btn1);
+
+******************
+var btn1 = document.createElement("BUTTON");
+btn1.innerHTML = 'QA value';
+btn1.style.width = '200px'; 
+btn1.style.height = '200px'; 
+btn1.style.background = 'teal';
+btn1.style.color = 'red';
+btn1.style.fontSize = '20px';
+var d = document.getElementById("ntp-contents");
+d.appendChild(btn1)
