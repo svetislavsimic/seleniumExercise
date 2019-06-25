@@ -1,0 +1,9 @@
+1. Otvorite stranicu blic.rs
+   Nadjite link "Svet"
+   Otvorite taj link u novom tabu
+   Otvorite prvu vest iz taba Svet
+
+2. Otvorite Blic
+   Kliknite na dugme Share 
+   
+
