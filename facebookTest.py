@@ -7,6 +7,7 @@ class FacebookTesting(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()
+        self.driver.implicitly_wait(10)
         self.driver.maximize_window()
 
 
