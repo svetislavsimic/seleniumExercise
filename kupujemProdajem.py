@@ -32,6 +32,7 @@ class KupujemProdajem(unittest.TestCase):
         grupa.click()
         naslovOglasa = driver.find_element_by_xpath("//input[@id='data[name]']")
 
+
         time.sleep(5)
 
     def tearDown(self):
