@@ -1,0 +1,9 @@
+Za domaci 11.06. :
+* otvorite stranicu https://www.python.org/
+* kliknite na tab News
+***************************************************************
+Za domaci 25.06. :
+* Testirati blic i iskoristiti:
+title_is
+title_contains
+element_to_be_clickable
