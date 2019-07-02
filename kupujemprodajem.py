@@ -38,7 +38,8 @@ class kupujemprodajem(unittest.TestCase):
 
         rucno = driver.find_element_by_xpath("//input[@id='data[ad_kind]goods']")
         rucno.click()
-        time.sleep(2)
+        #time.sleep(2)
+        driver.implicitly_wait(4)
 
         igrackeiigre = driver.find_element_by_xpath("//div[@data-value='1157']")
         driver.implicitly_wait(2)
@@ -47,7 +48,8 @@ class kupujemprodajem(unittest.TestCase):
         plisane = driver.find_element_by_xpath("//div[contains(@data-text,'Igračke | Plišane')]")
         driver.implicitly_wait(2)
         plisane.click()
-        time.sleep(2)
+        #time.sleep(2)
+        driver.implicitly_wait(2)
 
         naslovoglasa = driver.find_element_by_xpath("//input[contains(@id,'data[name]')]")
         naslovoglasa.click()
@@ -64,7 +66,7 @@ class kupujemprodajem(unittest.TestCase):
 
         valuta = driver.find_element_by_xpath("//input[@id='currency_eur']")
         valuta.click()
-        time.sleep(2)
+        driver.implicitly_wait(5)
 
         # driver.implicitly_wait(10)
         # tekstoglasa = driver.find_element_by_xpath("//body[@id='tinymce']")
