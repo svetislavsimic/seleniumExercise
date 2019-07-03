@@ -58,12 +58,8 @@ class KupujemProdajem(unittest.TestCase):
         action.send_keys(Keys.TAB)
         action.send_keys(Keys.TAB)
         action.send_keys(Keys.TAB)
-
         action.send_keys("Povoljni časovi manuelnog testiranja")
-        time.sleep(10)
         action.perform()
-        time.sleep(5)
-
 
         mesto = driver.find_element_by_xpath("(//span[contains(.,'Izaberite')])[13]")
         mesto.click()
@@ -78,7 +74,6 @@ class KupujemProdajem(unittest.TestCase):
 
         sledece = driver.find_element_by_xpath("//div[@class='slide-info-top-buttons']//div[@class='adFormPostButtonHolder']//input[@class='submit-button']")
         sledece.click()
-
 
 
     def tearDown(self):
