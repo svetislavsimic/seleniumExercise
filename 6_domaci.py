@@ -1,6 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import unittest
 
 
@@ -69,6 +72,21 @@ class JqueryUi(unittest.TestCase):
         action.click_and_hold(item_2).drag_and_drop_by_offset(item_2, 0, 50).perform()
         action.click_and_hold(item_4).drag_and_drop_by_offset(item_4, 0, 50).perform()
         action.click_and_hold(item_6).drag_and_drop_by_offset(item_6, 0, 50).perform()
+
+    def test_autocomplete(self):
+        driver = self.driver
+        driver.get("https://jqueryui.com/autocomplete/")
+        wait = WebDriverWait(driver, 10)
+        iframe = driver.find_element_by_xpath("//iframe[@class='demo-frame']")
+        driver.switch_to.frame(iframe)
+        action = ActionChains(driver)
+        input_field = driver.find_element_by_xpath("//input[@id='tags']")
+        input_field.send_keys(Keys.CONTROL + "a")
+        input_field.send_keys("py")
+        autofield = wait.until(EC.visibility_of_element_located((
+            By.CSS_SELECTOR, "#ui-id-1"))
+        )
+        action.click(autofield)
 
     def tearDown(self):
         self.driver.close()
