@@ -78,7 +78,6 @@ class JqueryUi(unittest.TestCase):
         driver.get("https://jqueryui.com/accordion/")
         iframe = driver.find_element_by_xpath("//iframe[@class='demo-frame']")
         driver.switch_to.frame(iframe)
-        action = ActionChains(driver)
         section_2 = driver.find_element_by_xpath("//h3[@id='ui-id-3']")
         section_4 = driver.find_element_by_xpath("//h3[@id='ui-id-7']")
         section_2.click()
@@ -90,14 +89,10 @@ class JqueryUi(unittest.TestCase):
         wait = WebDriverWait(driver, 10)
         iframe = driver.find_element_by_xpath("//iframe[@class='demo-frame']")
         driver.switch_to.frame(iframe)
-        action = ActionChains(driver)
         input_field = driver.find_element_by_xpath("//input[@id='tags']")
         input_field.send_keys(Keys.CONTROL + "a")
         input_field.send_keys("py")
-        autofield = wait.until(EC.visibility_of_element_located((
-            By.CSS_SELECTOR, "#ui-id-1"))
-        )
-        action.click(autofield)
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#ui-id-1"))).click()
 
     def tearDown(self):
         self.driver.close()
