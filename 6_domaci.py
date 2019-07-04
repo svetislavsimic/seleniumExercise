@@ -73,6 +73,17 @@ class JqueryUi(unittest.TestCase):
         action.click_and_hold(item_4).drag_and_drop_by_offset(item_4, 0, 50).perform()
         action.click_and_hold(item_6).drag_and_drop_by_offset(item_6, 0, 50).perform()
 
+    def test_accordion(self):
+        driver = self.driver
+        driver.get("https://jqueryui.com/accordion/")
+        iframe = driver.find_element_by_xpath("//iframe[@class='demo-frame']")
+        driver.switch_to.frame(iframe)
+        action = ActionChains(driver)
+        section_2 = driver.find_element_by_xpath("//h3[@id='ui-id-3']")
+        section_4 = driver.find_element_by_xpath("//h3[@id='ui-id-7']")
+        section_2.click()
+        section_4.click()
+
     def test_autocomplete(self):
         driver = self.driver
         driver.get("https://jqueryui.com/autocomplete/")
