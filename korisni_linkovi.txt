@@ -1,2 +1,6 @@
 webdriver.execute primer:
 https://dzone.com/articles/perform-actions-using-javascript-in-python-seleniu
+
+Link za ActionChains:
+https://jqueryui.com/draggable/
+https://bestvpn.org/html5demos/drag/
