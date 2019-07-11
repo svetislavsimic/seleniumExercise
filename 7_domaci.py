@@ -28,21 +28,24 @@ class HomeWork(unittest.TestCase):
         driver = self.driver
         driver.get("https://www.gmail.com")
         wait = WebDriverWait(driver, 10)
-        action = ActionChains(driver)
 
         '''Log in '''
         wait.until(EC.presence_of_element_located((By.NAME, "identifier"))).send_keys(username+Keys.ENTER)
 
-        wait.until(EC.presence_of_element_located((By.XPATH, "//input[@name='password']"))).send_keys(password+Keys.ENTER)
+        wait.until(EC.presence_of_element_located((
+            By.XPATH, "//input[@name='password']"))).send_keys(password+Keys.ENTER)
 
-        ''' Compose email'''
+        '''Compose and send'''
         wait.until(EC.presence_of_element_located((By.XPATH, "(//div[@tabindex='0'])[9]"))).click()
 
-        wait.until(EC.presence_of_element_located((By.XPATH, "//textarea[contains(@aria-label,'To')]"))).send_keys(send_mail_to)
+        wait.until(EC.presence_of_element_located((
+            By.XPATH, "//textarea[contains(@aria-label,'To')]"))).send_keys(send_mail_to)
 
-        wait.until(EC.presence_of_element_located((By.XPATH, "//input[contains(@aria-label,'Subject')]"))).send_keys(mail_subject)
+        wait.until(EC.presence_of_element_located((
+            By.XPATH, "//input[contains(@aria-label,'Subject')]"))).send_keys(mail_subject)
 
-        wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@aria-label,'Message Body')]"))).send_keys(mail_message+Keys.TAB+Keys.ENTER)
+        wait.until(EC.presence_of_element_located((
+            By.XPATH, "//div[contains(@aria-label,'Message Body')]"))).send_keys(mail_message+Keys.TAB+Keys.ENTER)
         sleep(2)
 
     def test_youtube(self):
