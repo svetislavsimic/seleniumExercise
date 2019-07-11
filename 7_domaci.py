@@ -31,31 +31,19 @@ class HomeWork(unittest.TestCase):
         action = ActionChains(driver)
 
         '''Log in '''
-        email_field = wait.until(EC.presence_of_element_located((By.NAME, "identifier")))
-        email_field.send_keys(username)
-        wait.until(EC.element_to_be_clickable((By.XPATH, "(//span[@class='RveJvd snByac'])[1]"))).click()
+        wait.until(EC.presence_of_element_located((By.NAME, "identifier"))).send_keys(username+Keys.ENTER)
 
-        password_field = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@name='password']")))
-        password_field.send_keys(password)
-        wait.until(EC.element_to_be_clickable((By.XPATH, "(//span[@class='RveJvd snByac'])[1]"))).click()
+        wait.until(EC.presence_of_element_located((By.XPATH, "//input[@name='password']"))).send_keys(password+Keys.ENTER)
 
         ''' Compose email'''
         wait.until(EC.presence_of_element_located((By.XPATH, "(//div[@tabindex='0'])[9]"))).click()
 
-        recipients_field = wait.until(EC.presence_of_element_located((By.XPATH, "//textarea[contains(@aria-label,'To')]")))
-        recipients_field.send_keys(send_mail_to)
+        wait.until(EC.presence_of_element_located((By.XPATH, "//textarea[contains(@aria-label,'To')]"))).send_keys(send_mail_to)
 
-        subject_field = wait.until(EC.presence_of_element_located((By.XPATH, "//input[contains(@aria-label,'Subject')]")))
-        subject_field.send_keys(mail_subject)
+        wait.until(EC.presence_of_element_located((By.XPATH, "//input[contains(@aria-label,'Subject')]"))).send_keys(mail_subject)
 
-        message_body = wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@aria-label,'Message Body')]")))
-        message_body.send_keys(mail_message)
-
-        '''Send email'''
-        action.key_down(Keys.LEFT_CONTROL)
-        action.key_down(Keys.ENTER)
-        action.key_up(Keys.LEFT_CONTROL)
-        action.perform()
+        wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@aria-label,'Message Body')]"))).send_keys(mail_message+Keys.TAB+Keys.ENTER)
+        sleep(2)
 
     def test_youtube(self):
         driver = self.driver
